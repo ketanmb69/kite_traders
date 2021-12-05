@@ -721,4 +721,4 @@ for code in default_exceptions:
     app.errorhandler(code)(errorhandler)
 
 
-app.run()
+app.run(host='0.0.0.0', port=80, debug=True)
