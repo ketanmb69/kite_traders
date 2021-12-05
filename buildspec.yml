@@ -12,6 +12,7 @@ phases:
   build:
     commands:
       - echo Build started on `date`
+      - export API_KEY=pk_2417e95c90454964b39de4be237537de
       - echo Running tests
       - python3 application.py 
 
