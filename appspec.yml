@@ -6,7 +6,8 @@ files:
     destination: /home/ec2-user/kite_traders
 hooks:
   ApplicationStop:
-    - location: scripts/application_stop.sh
+    - commands: 
+      - echo "No running Processes"
       timeout: 100
       runas: ec2-user
   BeforeInstall:
