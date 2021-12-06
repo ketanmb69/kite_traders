@@ -1,16 +1,20 @@
+
 version: 0.0
 os: linux
 files:
   - source: /
     destination: /home/ec2-user/kite_traders
 hooks:
-  InstallPip:
-    - commands:
-      - echo Installing pip...
-      - python -m pip install SomePackage
-      timeout: 30
+  ApplicationStop:
+    - location: bloomstrade/application_stop.sh
+      timeout: 10
       runas: ec2-user
-  RunApplication:
-    - location: bloomstrade/run.sh
-      timeout: 30
+  BeforeInstall:
+    - location: bloomstrade/before_install.sh
+      timeout: 10
       runas: ec2-user
+  ApplicationStart:
+    - location: bloomstrade/application_start.sh
+      timeout: 10
+      runas: ec2-user
+      
