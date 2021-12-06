@@ -1,4 +1,4 @@
-#!/bin/bash
 
-#Stop Application
+#Stopping Application
+echo "Stopping application"
 pkill node
