@@ -6,11 +6,11 @@ files:
     destination: /home/ec2-user/kite_traders
 hooks:
   ApplicationStop:
-    - location: application_stop.sh
+    - location: scripts/application_stop.sh
       timeout: 100
       runas: ec2-user
   BeforeInstall:
-    - location: before_install.sh
+    - location: scripts/before_install.sh
       timeout: 100
       runas: ec2-user
   ApplicationStart:
