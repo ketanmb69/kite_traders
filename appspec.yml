@@ -7,13 +7,13 @@ files:
 hooks:
   ApplicationStop:
     - location: application_stop.sh
-      timeout: 10
+      timeout: 100
       runas: ec2-user
   BeforeInstall:
     - location: before_install.sh
-      timeout: 10
+      timeout: 100
       runas: ec2-user
   ApplicationStart:
     - location: run.sh
-      timeout: 10
+      timeout: 100
       runas: ec2-user
