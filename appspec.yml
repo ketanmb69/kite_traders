@@ -3,17 +3,17 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/kite-traders1
+    destination: /home/ubuntu/kite-traders1/myproj
 hooks:
   ApplicationStop:
     - location: scripts/application_stop.sh
       timeout: 100
-      runas: ec2-user
+      runas: ubuntu
   BeforeInstall:
     - location: scripts/before_install.sh
       timeout: 100
-      runas: ec2-user
+      runas: ubuntu
   ApplicationStart:
     - location: ./run.sh
       timeout: 100
-      runas: ec2-user
+      runas: ubuntu
