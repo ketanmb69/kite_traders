@@ -64,7 +64,6 @@ if not os.environ.get("API_KEY"):
 def index():
     """Show portfolio of stocks"""
     items = db.execute("WITH indexSetup AS ( SELECT u.username, c.symbol,  c.name, t.c_id, t.ordertype, SUM(t.quantity) as quantity, SUM(t.quantity * t.price) AS total FROM transactions t JOIN companies c ON t.c_id = c.id JOIN users u ON t.user_id = u.id WHERE user_id =:user_id GROUP BY  u.username, c.symbol, c.name, t.c_id, t.ordertype), sell as (SELECT username, symbol,  name, c_id, SUM(quantity) as quantity , SUM(total) AS costBasis FROM indexSetup WHERE ordertype = 'SELL' GROUP BY 1, 2, 3, 4), buy AS ( SELECT username, symbol,  name, c_id, SUM(quantity) as quantity , SUM(total) AS costBasis FROM indexSetup WHERE ordertype = 'BUY' GROUP BY 1, 2, 3, 4) ,results AS(SELECT username, symbol,  name, c_id, COALESCE(SUM(b.quantity - s.quantity), b.quantity) as quantity, COALESCE(SUM(b.costBasis - s.CostBasis), b.costBasis)  AS total FROM buy b LEFT JOIN sell s USING(username, symbol, name, c_id) GROUP BY 1, 2, 3, 4 ORDER BY name) SELECT * FROM results WHERE quantity > 0", user_id=session["user_id"])
-    
     userCash = db.execute("SELECT username, cash FROM users WHERE id = :user_id", user_id=session["user_id"]) #[0]["username"]
     availableCash = userCash[0]["cash"]
 
@@ -721,4 +720,6 @@ for code in default_exceptions:
     app.errorhandler(code)(errorhandler)
 
 
-app.run()
+if __name__ == "__main__":
+    app.run(host='0.0.0.0', port=5000, debug=True)
+
