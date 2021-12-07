@@ -1,12 +1,13 @@
 
 #Before Starting the Application
 
-python3 -m pip install SomePackage
 
-sleep 5
-
-pip3 install -r ../requirements.txt
-
-sleep 5
+DIR="/home/ec2-user/kite-traders"
+if [ -d "$DIR" ]; then
+  echo "${DIR} exists"
+else
+  echo "Creating ${DIR} directory"
+  mkdir ${DIR}
+fi
 
 export API_KEY=pk_2417e95c90454964b39de4be237537de
