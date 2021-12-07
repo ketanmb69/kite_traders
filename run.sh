@@ -1,4 +1,4 @@
 
 #Run the application
 echo "Running the application"
-python application.py &
+python3 application.py &

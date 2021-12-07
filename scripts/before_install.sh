@@ -1,7 +1,7 @@
 
 #Before Starting the Application
 
-python -m pip install SomePackage
+python3 -m pip install SomePackage
 
 sleep 5
 
