@@ -9,15 +9,14 @@ from tempfile import mkdtemp
 from werkzeug.exceptions import default_exceptions, HTTPException, InternalServerError
 from werkzeug.security import check_password_hash, generate_password_hash
 from helpers import apology, login_required, lookup, usd
-# from config import API_KEY
 
-# Configure application
+
 app = Flask(__name__)
 
-# Ensure templates are auto-reloaded
+
 app.config["TEMPLATES_AUTO_RELOAD"] = True
 
-# Global Variables that will be used between different pages
+
 global current_datetime
 current_datetime = datetime
 
@@ -722,4 +721,3 @@ for code in default_exceptions:
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
-
