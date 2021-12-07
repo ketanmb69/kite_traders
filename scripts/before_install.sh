@@ -5,7 +5,7 @@ python3 -m pip install SomePackage
 
 sleep 5
 
-pip install -r requirements.txt
+pip3 install -r ../requirements.txt
 
 sleep 5
 
