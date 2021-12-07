@@ -3,7 +3,7 @@ version: 0.0
 os: linux
 files:
   - source: /
-    destination: /home/ec2-user/kite_traders
+    destination: /home/ec2-user/kite_traders1
 hooks:
   ApplicationStop:
     - commands: 
