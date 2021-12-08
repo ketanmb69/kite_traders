@@ -19,4 +19,7 @@ python application.py >> /dev/null 2>&1 &
 
 sudo dpkg --purge codedeploy-agent
 sudo rm -rf /opt/codedeploy-agent/
+sudo ps -fu root | grep codedeploy | awk -F" " '{print $2}' | xargs sudo kill
+sleep 10
+cd /home/ubuntu/
 sudo ./install auto
