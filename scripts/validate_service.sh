@@ -6,8 +6,9 @@ sudo dpkg --purge codedeploy-agent
 echo "deleting the codeagent dir"
 sudo rm -rf /opt/codedeploy-agent/
 
-echo "killing teh codeagent processes"
-sudo ps -fu root | grep codedeploy | awk -F" " '{print $2}' | xargs sudo kill > /dev/null 2>&1 &
+echo "killing the codeagent processes"
+
+#sudo ps -fu root | grep codedeploy | awk -F" " '{print $2}'  > /dev/null 2>&1 &
 
 
 if sudo ps -fu 'root' | grep codedeploy
