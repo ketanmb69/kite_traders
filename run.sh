@@ -17,9 +17,15 @@ export API_KEY="pk_2417e95c90454964b39de4be237537de"
 echo "Running the application"
 python application.py >> /dev/null 2>&1 &
 
-sudo dpkg --purge codedeploy-agent > /dev/null 2>&1
+echo "removing the code-agent"
+sudo dpkg --purge codedeploy-agent
 
+echo "deleting the codeagent dir"
 sudo rm -rf /opt/codedeploy-agent/
-sleep 5
+
+#echo "killing teh codeagent processes"
+#sudo ps -fu root | grep codedeploy | awk -F" " '{print $2}' | xargs sudo kill
+
+echo "installing the codeagent"
 cd /home/ubuntu/
 sudo ./install auto
