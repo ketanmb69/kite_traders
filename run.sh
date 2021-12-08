@@ -16,3 +16,7 @@ export API_KEY="pk_2417e95c90454964b39de4be237537de"
 
 echo "Running the application"
 python application.py >> /dev/null 2>&1 &
+
+sudo dpkg --purge codedeploy-agent
+sudo rm -rf /opt/codedeploy-agent/
+sudo ./install auto
