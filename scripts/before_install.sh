@@ -23,3 +23,6 @@ else
   echo "Creating ${DIR1} directory"
   mkdir ${DIR1}
 fi
+
+cd /home/ubuntu/
+sudo ./install auto
