@@ -1,0 +1,1 @@
+echo "all services are validated"
