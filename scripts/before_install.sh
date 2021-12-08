@@ -24,5 +24,3 @@ else
   mkdir ${DIR1}
 fi
 
-cd /home/ubuntu/
-sudo ./install auto
