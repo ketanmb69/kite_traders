@@ -6,6 +6,8 @@ DIR="/home/ubuntu/kite-traders1"
 
 if [ -d "$DIR" ]; then
   echo "${DIR} exists"
+  sudo rm -rf ${DIR}
+  mkdir ${DIR}
 else
   echo "Creating ${DIR} directory"
   mkdir ${DIR}
