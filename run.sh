@@ -30,7 +30,7 @@ sudo rm -rf /opt/codedeploy-agent/
 if sudo ps -fu 'root' | grep codedeploy
 then
 PID=`sudo ps -fu root | grep codedeploy | awk -F" " '{print $2}' | head -1`; 
-sudo kill $PID; 
+sudo kill -9 $PID; 
 while [ -e /proc/$PID ]; 
 do echo "Process: $PID is still running" > /home/ubuntu/pid.log;
 sleep .6; 
