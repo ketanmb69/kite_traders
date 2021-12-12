@@ -411,7 +411,7 @@ h1, h2, h3, h4, h5, h6 {
   height: 96.5vh;
   /* padding-top: 8%; */
   /* padding-bottom: 8%; */
-  background: url("../img/trade-bg-app.jpeg") top right;
+  background: url("../img/trade-bg.jpg") top right;
   background-size: cover;
   opacity: 90%;
 }
